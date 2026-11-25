@@ -1,0 +1,10 @@
+TimeSeriesGenerator — Synthetic Time Series Generator API
+Copyright 2026 pilot53201 / Scientific group "Time Series",
+Department of Physics, Lomonosov Moscow State University
+
+This product includes software developed as part of research on
+synthetic multivariate time series generation with controllable
+anomalies and missing values.
+
+See LICENSE for the full license text.
+Attribution questions: https://github.com/pilot53201/TimeSeriesGenerator/issues
