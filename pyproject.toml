@@ -10,6 +10,7 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "fastapi>=0.165.0",
     "numpy>=2.5.5",
     "pandas>=3.1.1",
 ]
@@ -47,7 +48,7 @@ ignore = ["E501"] # Игнорируем превышение длины стр�
 
 [tool.ruff.lint.per-file-ignores]
 # В тестах можно использовать assert и "магические" сравнения
-"tests/**/*.py" = ["S101", "PLR2002"]
+"tests/**/*.py" = ["S101", "PLR2004"]
 
 [tool.ruff.format]
 # Настройки форматтера (аналог Black)
