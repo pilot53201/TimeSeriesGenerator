@@ -1,0 +1,62 @@
+[project]
+name = "timeseriesgenerator"
+version = "0.1.0"
+description = "Synthetic time series generator API, supporting different types of anomaly values and empty values."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [
+    { name = "Pilot53201", email = "makeev05.06daniil2003@mail.ru" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.5.5",
+    "pandas>=3.1.1",
+]
+
+[project.scripts]
+tsgen = "tsgen.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.24,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "tsgen"
+module-root = "src"
+
+[dependency-groups]
+dev = [
+    "mypy>=2.4.1",
+    "pytest>=9.2.0",
+    "ruff>=0.17.6",
+]
+
+# ─────────────────────────────────────────────────────────────
+# Ruff
+# ─────────────────────────────────────────────────────────────
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+
+[tool.ruff.lint]
+# E — ошибки стиля, F — логические ошибки (Pyflakes),
+# I — сортировка импортов, UP — обновление синтаксиса, B — баги, SIM — упрощения
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"] # Игнорируем превышение длины строки, если она не критична
+
+[tool.ruff.lint.per-file-ignores]
+# В тестах можно использовать assert и "магические" сравнения
+"tests/**/*.py" = ["S101", "PLR2002"]
+
+[tool.ruff.format]
+# Настройки форматтера (аналог Black)
+quote-style = "double"
+indent-style = "space"
+
+# ─────────────────────────────────────────────────────────────
+# Mypy
+# ─────────────────────────────────────────────────────────────
+[tool.mypy]
+python_version = "3.14"
+strict = true

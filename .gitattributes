@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────────────────────
+# Line endings — normalize to LF in the repository
+# ─────────────────────────────────────────────────────────────
+* text=auto eol=lf
+
+# Python source: always LF
+*.py text eol=lf
+
+# Config and data files: LF
+*.toml text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+.env.example text eol=lf
+
+# Lockfiles: LF (uv.lock, requirements.txt)
+*.lock text eol=lf
+
+# Binary files: git must not touch
+*.xlsx binary
+*.xls binary
+*.parquet binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.zip binary
