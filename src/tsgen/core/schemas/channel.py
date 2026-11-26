@@ -1,6 +1,6 @@
 """This file contains measured channel within an object."""
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from src.tsgen.core.schemas.harmonic import Harmonic
 from src.tsgen.core.schemas.noise import GaussianNoise, NoiseSpec
@@ -9,7 +9,7 @@ from src.tsgen.core.schemas.noise import GaussianNoise, NoiseSpec
 class ChannelSpec(BaseModel):
     """One measured channel within an object."""
 
-    model_config: ConfigDict(extra="forbid")
+    model_config = ConfigDict(extra="forbid")
 
     name: str = Field(
         min_length=1,
