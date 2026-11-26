@@ -1,0 +1,12 @@
+{
+  "schema_version": "0.1",
+  "seed": 42,
+  "start_iso": "2026-01-01T00:00:00Z",
+  "frequency_seconds": 3600,
+  "n_series": 1,
+  "n_dimensions": 2,
+  "splits": {
+    "train": { "size": 100, "normal": 100 },
+    "test":  { "size": 100, "normal": 80  }
+  }
+}
